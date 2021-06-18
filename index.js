@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// Because nestedFunction() is creating closure, therefore the nestedFunction() is able to reach into the outer functions for the variable.
 
 
 
@@ -28,9 +28,12 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let count = 0;
+  for(let i = 0; i<=number; i++){
+    count = count + i;
+  }
+  return count;
   }
  
 
@@ -56,10 +59,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(zooAnimals){
+    const animalNames_results = [];
+    zooAnimals.forEach((item)=>{
+      animalNames_results.push(`name: ${item['animal_name']}, scientific: ${item['scientific_name']}`);
+    });
+    return animalNames_results;
   }
-  
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
